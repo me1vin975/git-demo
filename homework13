@@ -1,0 +1,10 @@
+#!/bin/bash
+file=/home/andreychisty/file.txt
+while IFS= read -r line; do
+   sa=stat --format=%s $file 
+   echo "$sa"
+   until [[ $sa -gt 1024000 ]];do
+    $line >> "$file"
+   stat --format=%s $file 
+   done 
+done < "$file"

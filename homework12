@@ -1,0 +1,8 @@
+#!/bin/bash
+while read -r line; do
+ if [[ $line == "hi" ]]; then
+ echo "Hello $USER"
+ else
+ $line
+ fi
+done

@@ -1,0 +1,18 @@
+#!/bin/bash
+declare -a arr
+arr=("$@")
+m=""
+echo ${!arr[@]}
+for ((i=1;i<=$#;i++));do
+   echo "Arg$i:" "${!i}"
+done
+for i in ${!arr[@]};do
+    if [[ $i -lt $#-1 ]]; then 
+    n=$((${arr[i]} + ${arr[i+1]}))
+    m+="$n "
+    else
+    x=$(($1 + ${arr[i]}))
+    
+    fi 
+done
+echo "$m""$x"
